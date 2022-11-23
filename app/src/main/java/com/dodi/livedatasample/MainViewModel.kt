@@ -1,6 +1,7 @@
 package com.dodi.livedatasample
 
 import android.os.SystemClock
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import java.util.Timer
@@ -20,6 +21,10 @@ class MainViewModel : ViewModel() {
             }
 
         }, ONE_SECOND.toLong(), ONE_SECOND.toLong())
+    }
+
+    fun getElapsedTime(): LiveData<Long?>{
+        return elapsedTime
     }
 
     companion object{
